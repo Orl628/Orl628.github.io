@@ -1,12 +1,276 @@
-<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-        <title>Orlando Marigliano</title>
+<title>Orlando Marigliano
+</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="preload" href="fonts/open-sans-v17-latin-regular.woff2" as="font">
+<style>
+
+:root {
+	--accent-color: #C988C3;
+	--back-color: #13A1A3;
+	--link-color: #55ABAD;
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('fonts/open-sans-v17-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('fonts/open-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* minimalist reset */
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+}
+
+body {
+	background-color: var(--back-color);
+	font-family: 'Open Sans',sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	padding: 30px 140px 0 140px;
+	max-width: 600px;
+	min-height: 100vh;
+	background-color: white;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	display: inline;
+	margin-right: 5px;
+}
+
+.accent {
+	color: var(--accent-color);
+}
+
+h2 {
+	margin-top: 50px;
+	font-size: 1.2em;
+}
+
+h3 {
+    margin-top: 10px;
+	font-weight: 400;
+	/*margin-bottom: 30px;*/
+}
+
+footer {
+	text-align: right;
+	margin-top: 80px;
+	padding-bottom: 20px;
+}
+
+p {
+	line-height: 1.5em;
+	margin-top: 20px;
+	display: block;
+}
+
+a {
+	color: darkgray;
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+ol {
+    counter-reset: item; 
+}
+ol>li {
+    counter-increment: item; 
+    list-style: none inside; 
+    margin: 20px 0;
+    overflow: hidden;
+    line-height: 1.5em;
+}
+ol>li:before {
+    content: counter(item) ;
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 50%;
+    width: 25px;
+    background: var(--accent-color);
+    color: white;
+    text-align: center; 
+    float: left;
+}
+
+@media (max-width: 600px) {
+  main {
+  	max-width: 600px;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  :root {
+  	--back-color: white;
+  }
+}
+
+</style>
 </head>
-<body style="font-family:'Georgia'">
-<h2>Orlando Marigliano</h2>
-Ph.D Student at Max Planck Institute for Mathematics in the Sciences, Leipzig.
+<body>
 
-My academic webpage can be found <a href="https://orlandomarigliano.wordpress.com">here</a>.
+<main>
+<center>
+<img src="foto.jpg" alt="Orlando Marigliano"
+style="width:180px;height:180px;">
+<br />
+<br />
+<h1>Orlando Marigliano</h1>
+<h3>Algebraic statistics, applied algebraic geometry at MPI Leipzig</h3></center>
 
-<a href = multivariate-boundary.pdf>pdf</a>
+<h2>Research</h2>
+
+<p>
+My background is in algebraic geometry. I am interested in the connections between algebraic geometry and the fields of statistics, data science, and the natural sciences. I am a Ph.D. student co-advised by Bernd Sturmfels and Christiane Görgen.
+</p>
+<p>
+Topics currently on my mind: Linear Gaussian covariance models, complete quartics, multivariate boundary polynomial regression, Bayesian networks, staged trees, the maximum likelihood degree, models with ML degree one.
+</p>
+<p>
+Other topics I'm interested in: random geometry and topology, singular learning theory, loss landscapes.
+</p>
+
+<h2>Publications & Preprints</h2>
+
+<ol><li>
+Leonie Selk, Charles Tillier and Orlando Marigliano.
+Multivariate boundary regression models. 
+<i>
+ArXiv preprint (2020).
+</i>
+[<a href = https://arxiv.org/abs/2004.09881>link</a>,
+<a href = multivariate-boundary.pdf>pdf</a>]
+</li><li>
+Jane Ivy Coons, Orlando Marigliano and Michael Ruddy. 
+Maximum likelihood degree of the small linear gaussian covariance model.
+<i>
+ArXiv preprint (2019).
+</i>
+[<a href=https://arxiv.org/abs/1909.04553>link</a>,
+<a href = small-covariance.pdf>pdf</a>]
+</li><li>
+Carlos Guerra,
+Manuel Delgado Baquerizo, 
+Eliana Duarte,
+Orlando Marigliano,
+Christiane Görgen,
+Fernando Maestre and
+Nico Eisenhauer.
+Global projections of the soil microbiome.
+<i>
+Submitted.
+</i>
+</li><li>
+Eliana Duarte, Orlando Marigliano and Bernd Sturmfels.
+Discrete statistical models with rational maximum likelihood estimator.
+<i>
+Bernoulli (2020, to appear).
+</i>
+[<a href = https://arxiv.org/abs/1903.06110>link</a>, 
+<a href = rational-mle.pdf>pdf</a>]
+</li><li>
+Paul Breiding and Orlando Marigliano. Random points on an algebraic manifold.
+<i>
+ArXiv preprint (2020).
+</i>
+[<a href = https://arxiv.org/abs/1810.06271>link</a>, 
+<a href = random-points.pdf>pdf</a>]
+</li><li>
+Orlando Marigliano. Verlinde bundles of families of hypersurfaces and their jumping lines.
+<i>
+Beitr Algebra Geom (2019).
+</i>
+[<a href = https://link.springer.com/article/10.1007/s13366-018-0423-5>link</a>, <a href = verlinde-springer.pdf>pdf</a>, 
+v2: <a href = https://arxiv.org/abs/1804.05710>link</a>, 
+<a href = verlinde-v2.pdf>pdf</a>]
+</li></ol>
+
+<h2>Other writing</h2>
+
+<ol>
+<li>
+Verlinde bundles of families of hypersurfaces.
+<i>
+Master's thesis.
+</i>
+[<a href = masters-thesis.pdf>pdf</a>,
+<a href = masters-thesis-poster.pdf>poster</a>].
+</li><li>
+Counting covers of elliptic curves.
+<i>
+Bachelor's thesis.
+</i>
+[<a href = bachelors-thesis.pdf>pdf</a>]
+</li>
+</ol>
+<h2>Coauthors</h2>
+
+<p>
+<a href=
+http://page.math.tu-berlin.de/~breiding/>
+Paul Breiding</a>,
+<a href=
+https://janeivycoons.wordpress.ncsu.edu/>
+Jane Ivy Coons</a>,
+<a href=
+https://emduart2.github.io/>
+Eliana Duarte</a>,
+<a href=
+https://sites.google.com/view/goergen/research>
+Christiane Görgen</a>,
+<a href=
+https://www.idiv.de/en/groups_and_people/employees/details/474.html>
+Carlos Guerra</a>,
+<a href=
+https://www.math.uni-hamburg.de/home/selk/>
+Leonie Selk</a>,
+<a href=
+https://math.berkeley.edu/~bernd/>
+Bernd Sturmfels</a>,
+<a href=
+https://mgruddy.wixsite.com/home>
+Michael Ruddy</a>,
+<a href=
+http://tillier.perso.math.cnrs.fr/>
+Charles Tillier</a>.
+</p>
+
+<h2>Short CV</h2>
+<p>
+
+2018–2020: Ph.D. student at Max Planck Institute for Mathematics in the Sciences. Advisors: Bernd Sturmfels and Christiane Görgen.
+</p><p>
+2012–2018: Bachelor's and Master's student at University of Bonn. Advisor: Daniel Huybrechts.
+</p>
+
+<h2>Contact</h2>
+<p>
+By email: orlando.marigliano at mis.mpg.de
+</p>
+
+<footer></footer>
+</main>
+
+</body>
+</html>
+
