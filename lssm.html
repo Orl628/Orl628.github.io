@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Orlando Marigliano
+</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="preload" href="fonts/open-sans-v17-latin-regular.woff2" as="font">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<style>
+
+:root {
+	--accent-color: #b70d7f;
+	--back-color: #6BB895;
+	--link-color: #60bceb;
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('fonts/open-sans-v17-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('fonts/open-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* minimalist reset */
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+}
+
+body {
+	background-color: var(--back-color);
+	font-family: 'Open Sans',sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	padding: 30px 140px 0 140px;
+	max-width: 650px;
+	min-height: 100vh;
+	background-color: white;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	display: inline;
+	margin-right: 5px;
+}
+
+.accent {
+	color: var(--accent-color);
+}
+
+h2 {
+	margin-top: 50px;
+	font-size: 1.2em;
+}
+
+h3 {
+    margin-top: 10px;
+	font-weight: 400;
+	/*margin-bottom: 30px;*/
+}
+
+footer {
+	text-align: right;
+	margin-top: 80px;
+	padding-bottom: 20px;
+}
+
+p {
+	line-height: 1.5em;
+	margin-top: 20px;
+	display: block;
+}
+
+a {
+	color: darkgray;
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+ol {
+    counter-reset: item; 
+}
+ol>li {
+    counter-increment: item; 
+    list-style: none inside; 
+    margin: 20px 0;
+    overflow: hidden;
+    line-height: 1.5em;
+}
+ol>li:before {
+    content: counter(item) ;
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 50%;
+    width: 25px;
+    background: var(--accent-color);
+    color: white;
+    text-align: center; 
+    float: left;
+}
+
+kbd {
+	font-family: monospace;
+	font-size: 12pt;
+}
+
+@media (max-width: 650px) {
+  main {
+  	max-width: 650px;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  :root {
+  	--back-color: white;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<main>
+<center>
+<img src="lssm-logo-top.png" alt="LSSM logo under a Gaussian curve"
+style="width:430px;height:210px;">
+<br />
+<br />
+<h1>Linear Spaces of Symmetric Matrices</h1>
+<h3>A collaboration project at MPI Leipzig and worldwide</h3></center>
+
+<h2>About</h2>
+
+<p>
+The aim of this project is to advance the understanding of linear spaces of symmetric matrices. Looking at these seemingly simple objects from many different perspectives gives rise to many interesting mathematical questions. We collected them in a list aspirationally named "3264 Questions about Symmetric Matrices." The more than 40 participants in our working group aim to address these questions in a series of papers.
+</p>
+
+<p>
+Here are some of the lenses that we use when studying LSSM: combinatorics, intersection theory, algebraic geometry, semidefinite programming, algebraic statistics, matroid theory, nonarchimedian analysis, optimization, likelihood geometry.
+</p>
+
+<p>
+The project is coordinated at MPI Leipzig by Orlando Marigliano, Mateusz Michalek, Tim Seynnaeve, and Bernd Sturmfels.
+[<a href = https://www.orlandomarigliano.com>om</a>,
+<a href = https://personal-homepages.mis.mpg.de/michalek>mm</a>,
+<a href = https://www.mis.mpg.de/combag/members/tim-seynnaeve.html>ts</a>,
+<a href = https://math.berkeley.edu/~bernd>bs</a>]
+</p>
+
+<h2>Events</h2>
+
+<ol>
+<li>
+July 27, 18:00: Claudia Fevola, Yelena Mandelshtam, Bernd Sturmfels. Two-dimensional LSSM. <i>Online session. </i>
+</li><li>
+July 17, 14:00: Mateusz Michalek. Enumerative geometry of LSSM. <i> Seminar talk. </i>
+[<a href = https://www.mis.mpg.de/calendar/lectures/2020/abstract-31718.html>link</a>]
+</li>
+</ol>
+
+<h2>Resources</h2>
+
+<ol>
+<li>
+Bernd Sturmfels. 3264 Questions about Symmetric Matrices.
+[<a href = 3264questions.pdf>pdf</a>]
+</li>
+</ol>
+
+
+<center>
+<img src="lssm-logo-bottom.png" alt="There are 104 quadratic surfaces that contain 3 given points, are tangent to 3 given lines, and are tangent to 3 given planes."
+style="width:590px;height:420px;padding-top: 20px">
+</center>
+
+<footer></footer>
+</main>
+
+</body>
+</html>
+
