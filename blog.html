@@ -172,12 +172,12 @@ img {
 When studying chain event graphs, it was not clear to me how these objects are defined. Although their construction from staged trees seemed intuitive, I could not find a truly formal definition in the literature. Below is my attempt at such a definition.
 </p>
 <p>
-Let <span class="math inline">\(T\)</span> be a rooted tree and <span class="math inline">\(L\)</span> an arbitrary label set. A <em>labeling</em> of <span class="math inline">\(T\)</span> is a map <span class="math inline">\(\theta: E(T) \to L\)</span>.
+Let <span class="math inline">\(T\)</span> be a rooted tree and <span class="math inline">\(L\)</span> an arbitrary label set. A <em>labeling</em> of <span class="math inline">\(T\)</span> is a map <span class="math inline">\(\theta\colon E(T) \to L\)</span>.
 We call the pair <span class="math inline">\((T, \theta)\)</span> a <em>labeled tree</em>.
 </p><p>
 Every labeled tree has a natural staging induced by the
 edge labels.
-Conversely, every staged tree has the canonical labeling <span class="math inline">\(\theta : E(T) \to \bigcup_{f \text{ floret}} \bigcup_{e\in f}\{e\}\)</span> with <span class="math inline">\(\theta(e) = e\)</span>.
+Conversely, every staged tree has the canonical labeling <span class="math inline">\(\theta\colon E(T) \to \bigcup_{f \text{ floret}} \bigcup_{e\in f}\{e\}\)</span> with <span class="math inline">\(\theta(e) = e\)</span>.
 </p><p>
 Let <span class="math inline">\((T, \theta)\)</span> be a labeled tree.
 A <em>labeled subtree</em> <span class="math inline">\((T', \theta')\)</span> of <span class="math inline">\(T\)</span> is a labeled tree such that <span class="math inline">\(V(T')\subseteq V(T)\)</span>, <span class="math inline">\(E(T')\subseteq E(T )\)</span> and such that for every edge <span class="math inline">\(e = (v, w)\)</span> of <span class="math inline">\(T\)</span>, if <span class="math inline">\(v \in V(T')\)</span> then <span class="math inline">\(w \in V(T')\)</span>, <span class="math inline">\(e \in E(T')\)</span> and <span class="math inline">\(\theta'(e) = \theta(e)\)</span>.
