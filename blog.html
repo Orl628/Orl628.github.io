@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+<title>Blog
+</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="preload" href="fonts/open-sans-v17-latin-regular.woff2" as="font">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<style>
+
+/* website design lifted from https://jeffhuang.com/designed_to_last */
+
+:root {
+	--accent-color: #C988C3;
+	--back-color: #13A1A3;
+	--link-color: #55ABAD;
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('fonts/open-sans-v17-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('fonts/open-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* minimalist reset */
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+}
+
+body {
+	background-color: var(--back-color);
+	font-family: 'Open Sans',sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	padding: 30px 140px 0 140px;
+	max-width: 650px;
+	min-height: 100vh;
+	background-color: white;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	display: inline;
+	margin-right: 5px;
+}
+
+.accent {
+	color: var(--accent-color);
+}
+
+h2 {
+	margin-top: 50px;
+	font-size: 1.2em;
+}
+
+h3 {
+    margin-top: 10px;
+	font-weight: 400;
+	/*margin-bottom: 30px;*/
+}
+
+h4 {
+	margin-top: 0px;
+	font-weight: 400;
+	font-style: italic;
+	color: gray;
+	/*text-align:right;*/
+}
+
+footer {
+	text-align: right;
+	margin-top: 80px;
+	padding-bottom: 20px;
+}
+
+p {
+	line-height: 1.5em;
+	margin-top: 20px;
+	display: block;
+}
+
+a {
+	color: darkgray;
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+ol {
+    counter-reset: item; 
+}
+ol>li {
+    counter-increment: item; 
+    list-style: none inside; 
+    margin: 20px 0;
+    overflow: hidden;
+    line-height: 1.5em;
+}
+ol>li:before {
+    content: counter(item) ;
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 50%;
+    width: 25px;
+    background: var(--accent-color);
+    color: white;
+    text-align: center; 
+    float: left;
+}
+
+kbd {
+	font-family: monospace;
+	font-size: 12pt;
+}
+
+img {
+	max-width: 100%;
+	min-width: 100px;
+	height: auto;
+}
+
+@media (max-width: 650px) {
+  main {
+  	max-width: 650px;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  :root {
+  	--back-color: white;
+  }
+}
+
+</style>
+  </head>
+<body>
+
+<main>
+<center>
+<h1>Blog</h1>
+<h3>Short notes about small insights</h3>
+</center>
+<h2 id="ceg-definition">The chain event graph of a labeled tree</h2>
+<h4>March 1, 2021</h4>
+<p>
+When studying chain event graphs, it was not clear to me how these objects are defined. Although their construction from staged trees seemed intuitive, I could not find a truly formal definition in the literature. Below is my attempt at such a definition.
+</p>
+<p>
+Let <span class="math inline">\(T\)</span> be a rooted tree and <span class="math inline">\(L\)</span> an arbitrary label set. A <em>labeling</em> of <span class="math inline">\(T\)</span> is a map <span class="math inline">\(\theta: E(T) \to L\)</span>.
+We call the pair <span class="math inline">\((T, \theta)\)</span> a <em>labeled tree</em>.
+</p><p>
+Every labeled tree has a natural staging induced by the
+edge labels.
+Conversely, every staged tree has the canonical labeling <span class="math inline">\(\theta : E(T) \to \bigcup_{f \text{ floret}} \bigcup_{e\in f}\{e\}\)</span> with <span class="math inline">\(\theta(e) = e\)</span>.
+</p><p>
+Let <span class="math inline">\((T, \theta)\)</span> be a labeled tree.
+A <em>labeled subtree</em> <span class="math inline">\((T', \theta')\)</span> of <span class="math inline">\(T\)</span> is a labeled tree such that <span class="math inline">\(V(T')\subseteq V(T)\)</span>, <span class="math inline">\(E(T')\subseteq E(T )\)</span> and such that for every edge <span class="math inline">\(e = (v, w)\)</span> of <span class="math inline">\(T\)</span>, if <span class="math inline">\(v \in V(T')\)</span> then <span class="math inline">\(w \in V(T')\)</span>, <span class="math inline">\(e \in E(T')\)</span> and <span class="math inline">\(\theta'(e) = \theta(e)\)</span>.
+</p><p>
+By this definition, a labeled subtree is already determined by the choice of its root. However, different choices of the root might lead to the same labeled subtree.
+Also, two vertices of <span class="math inline">\(T\)</span> are in the same position if and only if their induced labeled subtrees are the same.
+</p><p>
+Given a labeled tree <span class="math inline">\((T, \theta)\)</span>, we define its labeled <em>chain event graph</em> <span class="math inline">\((G, \vartheta)\)</span> as follows.
+</p><p>
+1. Set <span class="math inline">\(V(G) = \{\text{Labeled subtrees of } T\}\)</span>.
+</p><p>
+2. For <span class="math inline">\(T_1\)</span>, <span class="math inline">\(T_2 \in V(G)\)</span>, define <span class="math inline">\(E(T_1 , T_2 )\)</span> to be the set of edges <span class="math inline">\(e = (r_1 , r_2 ) \in E(T_1 )\)</span> such that <span class="math inline">\(r_1\)</span> is the root of <span class="math inline">\(T_1\)</span> and <span class="math inline">\(r_2\)</span> is the root of a copy of <span class="math inline">\(T_2\)</span> appearing as a labeled subtree of <span class="math inline">\(T_1\)</span>.
+</p><p>
+3. For <span class="math inline">\(e \in E(T_1 , T_2 )\)</span>, let its label <span class="math inline">\(\theta(e)\)</span> be the label of <span class="math inline">\(e\)</span> in <span class="math inline">\(T_1\)</span>.
+</p>
+<p>
+This concludes my definition of the chain event graph associated to a given staged tree.  
+</p>
+
+
+<footer></footer>
+</main>
+
+</body>
+</html>
