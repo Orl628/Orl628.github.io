@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<title>Commutative algebra and algebraic geometry
+</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="preload" href="fonts/open-sans-v17-latin-regular.woff2" as="font">
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<style>
+
+/* website design lifted from https://jeffhuang.com/designed_to_last */
+
+:root {
+	--accent-color: #C988C3;
+	--back-color: #13A1A3;
+	--link-color: #55ABAD;
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('fonts/open-sans-v17-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('fonts/open-sans-v17-latin-700.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* minimalist reset */
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+}
+
+body {
+	background-color: var(--back-color);
+	font-family: 'Open Sans',sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	padding: 30px 140px 0 140px;
+	max-width: 650px;
+	min-height: 100vh;
+	background-color: white;
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+	display: inline;
+	margin-right: 5px;
+}
+
+.accent {
+	color: var(--accent-color);
+}
+
+h2 {
+	margin-top: 50px;
+	font-size: 1.2em;
+}
+
+h3 {
+    margin-top: 10px;
+	font-weight: 400;
+	/*margin-bottom: 30px;*/
+}
+
+h4 {
+	margin-top: 0px;
+	font-weight: 400;
+	font-style: italic;
+	color: gray;
+	/*text-align:right;*/
+}
+
+footer {
+	text-align: right;
+	margin-top: 80px;
+	padding-bottom: 20px;
+}
+
+p {
+	line-height: 1.5em;
+	margin-top: 20px;
+	display: block;
+}
+
+a {
+	color: darkgray;
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+ol {
+    counter-reset: item; 
+}
+ol>li {
+    counter-increment: item; 
+    list-style: none inside; 
+    margin: 20px 0;
+    overflow: hidden;
+    line-height: 1.5em;
+}
+ol>li:before {
+    content: counter(item) ;
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 50%;
+    width: 25px;
+    background: var(--accent-color);
+    color: white;
+    text-align: center; 
+    float: left;
+}
+
+kbd {
+	font-family: monospace;
+	font-size: 12pt;
+}
+
+img {
+	max-width: 100%;
+	min-width: 100px;
+	height: auto;
+}
+
+@media (max-width: 650px) {
+  main {
+  	max-width: 650px;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  :root {
+  	--back-color: white;
+  }
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding-top:2px;
+  padding-bottom:2px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+</style>
+  </head>
+<body>
+
+<main>
+<center>
+<h1>Commutative algebra and algebraic geometry</h1>
+
+<h3>A course at KTH Stockholm and Stockholm University (code MM7042)</h3>
+</center>
+
+<h2>Schedule</h2>
+
+<p>
+The course takes place every Thursday at 8:00. The first lecture is on September 1, 2022. The last lecture is on December 15, 2022. The exam is on January 5, 2023.
+</p>
+
+<p>
+The course will take place in different rooms both at KTH and at SU. The schedule for the rooms is reported below.
+</p>
+
+<br />
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Place</th>
+  </tr>
+  <tr>
+<td>2022-09-01</td>
+<td>KTH: E3, Osquars backe 2 [<a href=https://www.kth.se/places/room/id/6d0a6f99-d756-4941-97e5-977a0db6c619>link</a>]</td>
+  </tr>
+  <tr>
+<td>2022-09-08</td>
+<td>Albano: Lecture room 1, Albano Hus 1, 2nd floor</td>
+  </tr>
+  <tr>
+<td>2022-09-15</td>
+<td>KTH: Salongen 1, Osquars backe 31 [<a href=https://www.kth.se/places/room/id/2ce773d5-3190-4588-8618-27ea2822000b>link</a>]</td>
+  </tr>
+  <tr>
+<td>2022-09-22</td>
+<td>SU: B419, Södra huset hus B, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-09-29</td>
+<td>SU: F413, Södra huset hus F, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-10-06</td>
+<td>KTH: E3, Osquars backe 2 [<a href=https://www.kth.se/places/room/id/6d0a6f99-d756-4941-97e5-977a0db6c619>link</a>]</td>
+  </tr>
+  <tr>
+<td>2022-10-13</td>
+<td>KTH: Q2, Malvinas väg 10 [<a href=https://www.kth.se/places/room/id/1d244f3a-c130-4909-98e2-c1590f352b2e>link</a>]</td>
+  </tr>
+  <tr>
+<td>2022-10-20</td>
+<td>KTH: Salongen 1, Osquars backe 31 [<a href=https://www.kth.se/places/room/id/2ce773d5-3190-4588-8618-27ea2822000b>link</a>]</td>
+  </tr>
+  <tr>
+<td>2022-10-27</td>
+<td>Albano: Lecture room 1, Albano Hus 1, 2nd floor</td>
+  </tr>
+  <tr>
+<td>2022-11-03</td>
+<td>SU: F413, Södra huset hus F, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-11-10</td>
+<td>SU: F413, Södra huset hus F, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-11-17</td>
+<td>SU: F413, Södra huset hus F, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-11-24</td>
+<td>SU: F413, Södra huset hus F, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-12-01</td>
+<td>SU: B413, Södra huset hus B, 4th floor</td>
+  </tr>
+  <tr>
+<td>2022-12-08</td>
+<td>SU: D299, Södra huset hus D, 2nd floor</td>
+  </tr>
+  <tr>
+<td>2022-12-15</td>
+<td>SU: F299, Södra huset hus F, 2nd floor</td>
+  </tr>
+</table> 
+
+<footer />
+</main>
+
+</body>
+</html>
