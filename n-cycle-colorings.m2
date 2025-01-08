@@ -1,0 +1,266 @@
+restart
+
+-- three-cycle with all nodes the same color
+-- all colorings up to symmetry
+-- variance of the nodes normalized to be 1
+
+n = 3
+
+-- colors  colorings
+--   1         1
+--   2         1
+--   3         1
+
+-- using y for the original linear space, x for its inverse, l for colors
+
+R  = QQ[l1, l2, l3, x11, x12, x13, x22, x23, x33]
+X  = matrix{{x11, x12, x13},
+            {x12, x22, x23},
+            {x13, x23, x33}}
+
+ID = matrix{{1,0,0},{0,1,0},{0,0,1}}
+
+Y1 = matrix{{ 1, l1, l1},
+            {l1,  1, l1},
+            {l1, l1,  1}}
+
+Y2 = matrix{{ 1, l1, l2},
+            {l1,  1, l1},
+            {l2, l1,  1}}
+
+Y3 = matrix{{ 1, l1, l2},
+            {l1,  1, l3},
+            {l2, l3,  1}}
+
+I1 = minors(1, X*Y1 - ID)
+I2 = minors(1, X*Y2 - ID)
+I3 = minors(1, X*Y3 - ID)
+
+J1 = eliminate({l1,l2,l3},I1)
+J2 = eliminate({l1,l2,l3},I2)
+J3 = eliminate({l1,l2,l3},I3)
+
+hasDegOne = p -> ((degree p)_0 == 1)  -- the _0 is because degree returns a list
+
+LinForms1 = select(J1_*, hasDegOne)  -- the _* just lists all generators
+LinForms2 = select(J2_*, hasDegOne)
+LinForms3 = select(J3_*, hasDegOne)
+
+print LinForms1
+print LinForms2
+print LinForms3
+
+-----------------------------------------------------------------
+
+restart
+
+-- four-cycle with all nodes the same color
+-- all colorings up to symmetry
+-- numbering clockwise starting from upper left corner
+
+-- 1--2
+-- |  |
+-- 4--3
+
+n = 4
+
+-- colors  partitions colorings
+--   1     4              1
+--   2     1+3, 2+2      1+2
+--   3     1+1+2          2
+--   4     1+1+1+1        1
+
+-- using y for the original linear space, x for its inverse, l for colors
+
+R  = QQ[l0, l1, l2, l3, l4, x11, x12, x13, x14, x22, x23, x24, x33, x34, x44]
+X  = matrix{{x11, x12, x13, x14},
+            {x12, x22, x23, x24},
+            {x13, x23, x33, x34},
+            {x14, x24, x34, x44}}
+
+ID = matrix{{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}}
+
+Y1 = matrix{{l0, l1,  0, l1},
+            {l1, l0, l1,  0},
+            { 0, l1, l0, l1},
+            {l1,  0, l1, l0}}
+
+Y21 = matrix{{l0, l1,  0, l1},
+             {l1, l0, l2,  0},
+             { 0, l2, l0, l2},
+             {l1,  0, l2, l0}}
+
+Y22 = matrix{{l0, l1,  0, l2},
+             {l1, l0, l2,  0},
+             { 0, l2, l0, l1},
+             {l2,  0, l1, l0}}
+
+Y23 = matrix{{l0, l1,  0, l2},
+             {l1, l0, l2,  0},
+             { 0, l2, l0, l2},
+             {l2,  0, l2, l0}}
+
+Y31 = matrix{{l0, l1,  0, l1},
+             {l1, l0, l2,  0},
+             { 0, l2, l0, l3},
+             {l1,  0, l3, l0}}
+
+Y32 = matrix{{l0, l1,  0, l2},
+             {l1, l0, l3,  0},
+             { 0, l3, l0, l1},
+             {l1,  0, l1, l0}}
+
+Y4 = matrix{{l0, l1,  0, l2},
+            {l1, l0, l3,  0},
+            { 0, l3, l0, l4},
+            {l2,  0, l4, l0}}
+
+I1 = minors(1, X*Y1 - ID)
+I21 = minors(1, X*Y21 - ID)
+I22 = minors(1, X*Y22 - ID)
+I23 = minors(1, X*Y23 - ID)
+I31 = minors(1, X*Y31 - ID)
+I32 = minors(1, X*Y32 - ID)
+I4 = minors(1, X*Y4 - ID)
+
+J1 = eliminate({l1,l2,l3,l4,l0}, I1)
+J21 = eliminate({l1,l2,l3,l4,l0},I21)
+J22 = eliminate({l1,l2,l3,l4,l0},I22)
+J23 = eliminate({l1,l2,l3,l4,l0},I23)
+J31 = eliminate({l1,l2,l3,l4,l0},I31)
+J32 = eliminate({l1,l2,l3,l4,l0},I32)
+J4 = eliminate({l1,l2,l3,l4,l0}, I4)
+
+hasDegOne = p -> ((degree p)_0 == 1)  -- the _0 is because degree returns a list
+
+LinForms1 = select(J1_*, hasDegOne)
+LinForms21 = select(J21_*, hasDegOne)
+LinForms22 = select(J22_*, hasDegOne)
+LinForms23 = select(J23_*, hasDegOne)
+LinForms31 = select(J31_*, hasDegOne)
+LinForms32 = select(J32_*, hasDegOne)
+LinForms4 = select(J4_*, hasDegOne)
+
+print J1
+print J21
+print J22
+print J23
+print J31
+print J32
+print J4
+
+-------------------------------------------------------------------
+
+restart
+
+-- five-cycle with all nodes the same color
+-- all colorings up to symmetry
+
+-- lay pentagon flat: 1--2--3--4--5--1
+
+n = 5
+
+-- partition    colorings
+
+--   5            11111
+--   4+1          11112
+--   3+2          11122 11212
+--   3+1+1        11123 11213
+--   2+2+1        11223 11232 12123
+--   2+1+1+1      11234 12134
+--   1+1+1+1+1    12345
+
+-- using y for the original linear space, x for its inverse, l for colors
+
+R  = QQ[l0, l1, l2, l3, l4, l5, x11, x12, x13, x14, x15, x22, x23, x24, x25, x33, x34, x35, x44, x45, x55]
+X  = matrix{{x11, x12, x13, x14, x15},
+            {x12, x22, x23, x24, x25},
+            {x13, x23, x33, x34, x35},
+            {x14, x24, x34, x44, x45},
+            {x15, x25, x35, x45, x55}}
+
+ID = matrix{{1,0,0,0,0},{0,1,0,0,0},{0,0,1,0,0},{0,0,0,1,0},{0,0,0,0,1}}
+
+Y1 = matrix{{l0, l1,  0,  0, l1},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l1,  0},
+            { 0,  0, l1, l0, l1},
+            {l1,  0,  0, l1, l0}}
+
+Y2 = matrix{{l0, l1,  0,  0, l2},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l1,  0},
+            { 0,  0, l1, l0, l1},
+            {l2,  0,  0, l1, l0}}
+
+Y31 = matrix{{l0, l1,  0,  0, l2},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l1,  0},
+            { 0,  0, l1, l0, l2},
+            {l2,  0,  0, l2, l0}}
+
+Y32 = matrix{{l0, l1,  0,  0, l2},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l2,  0},
+            { 0,  0, l2, l0, l1},
+            {l2,  0,  0, l1, l0}}
+
+Y41 = matrix{{l0, l1,  0,  0, l3},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l1,  0},
+            { 0,  0, l1, l0, l2},
+            {l3,  0,  0, l2, l0}}
+
+Y42 = matrix{{l0, l1,  0,  0, l3},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l2,  0},
+            { 0,  0, l2, l0, l1},
+            {l3,  0,  0, l1, l0}}
+
+Y51 = matrix{{l0, l1,  0,  0, l3},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l2,  0},
+            { 0,  0, l2, l0, l2},
+            {l3,  0,  0, l2, l0}}
+
+Y52 = matrix{{l0, l1,  0,  0, l2},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l2,  0},
+            { 0,  0, l2, l0, l3},
+            {l2,  0,  0, l3, l0}}
+
+Y53 = matrix{{l0, l1,  0,  0, l3},
+            {l1, l0, l2,  0,  0},
+            { 0, l2, l0, l1,  0},
+            { 0,  0, l1, l0, l2},
+            {l3,  0,  0, l2, l0}}
+
+Y61 = matrix{{l0, l1,  0,  0, l4},
+            {l1, l0, l1,  0,  0},
+            { 0, l1, l0, l2,  0},
+            { 0,  0, l2, l0, l3},
+            {l4,  0,  0, l3, l0}}
+
+Y62 = matrix{{l0, l1, 0, 0, l4},
+            {l1, l0, l2,  0,  0},
+            { 0, l2, l0, l1,  0},
+            { 0,  0, l1, l0, l3},
+            {l4,  0,  0, l3, l0}}
+
+Y7 = matrix{{l0, l1,  0,  0, l2},
+            {l1, l0, l3,  0,  0},
+            { 0, l3, l0, l4,  0},
+            { 0,  0, l4, l0, l5},
+            {l2,  0,  0, l5, l0}}
+
+models = {Y1, Y2, Y31, Y32, Y41, Y42, Y51, Y52, Y53, Y61, Y62, Y7}
+
+modelIdeals = apply(models, p -> minors(1, X*p - ID))
+
+eliminatedIdeals = apply(modelIdeals, p -> eliminate({l0,l1,l2,l3,l4,l5}, p))
+
+hasDegOne = p -> ((degree p)_0 == 1)  -- the _0 is because degree returns a list
+
+linForms = apply(eliminatedIdeals, p -> select(p_*, hasDegOne))
+
+for p in linForms do print p
