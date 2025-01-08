@@ -1,3 +1,4 @@
+M2
 restart
 
 -- three-cycle with all nodes the same color
